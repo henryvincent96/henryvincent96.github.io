@@ -111,6 +111,7 @@ figcaption {
     text-align: right;
     color: grey;
 }
+
 @media all and (min-width: 801px) {
     main p:first-of-type::first-letter {
         font-size: 7em;
@@ -118,13 +119,5 @@ figcaption {
         padding-right: 0.05em;
         padding: 0.05em 0.1em;
         line-height: 1;
-    }
-
-    main p:first-of-type::first-letter::before {
-        margin-top: -0.1em;
-    }
-
-    main p:first-of-type::first-letter::after {
-        margin-bottom: -0.1em;
     }
 }
