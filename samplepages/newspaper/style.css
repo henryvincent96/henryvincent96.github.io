@@ -116,5 +116,15 @@ figcaption {
         font-size: 7em;
         float: left;
         padding-right: 0.05em;
+        padding: 0.05em 0.1em;
+        line-height: 1;
+    }
+
+    main p:first-of-type::first-letter::before {
+        margin-top: -0.1em;
+    }
+
+    main p:first-of-type::first-letter::after {
+        margin-bottom: -0.1em;
     }
 }
