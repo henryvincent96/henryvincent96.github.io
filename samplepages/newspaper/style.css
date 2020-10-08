@@ -1,31 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lusitana&family=Raleway:wght@700&display=swap');
 
 html {
-    font-size: 16px;
+    font-size: min(max(1em, 4vw), 20.5px);
     font-family: 'Lusitana', serif;
 }
-
-@media screen and (min-width: 320px) {
-    html {
-      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
-    }
-  }
-  @media screen and (min-width: 1000px) {
-    html {
-      font-size: 22px;
-    }
-  }
 
 body {
     display: grid;
     grid-template-columns: 15vw auto 15vw;
     background-color: whitesmoke;
-}
-
-@media all and (max-width: 1000px) {
-    body {
-        grid-template-columns: 0 auto 0;
-    }
 }
 
 article {
@@ -38,31 +21,16 @@ img {
     width: 100%;
 }
 
+figure {
+    width: 95%;
+    margin: auto;
+}
+
 main {
     columns: 2;
     line-height: 1.75;
     margin: 0 2.5vw;
     text-align: justify;
-}
-
-
-@media all and (min-width: 2100px) {
-    main {
-        columns: 3;
-    }
-}
-
-@media all and (max-width: 1500px) {
-    main {
-        columns: 1;
-        text-align: left;
-    }
-}
-
-@media all and (max-width: 800px) {
-    main {
-        margin: 0;
-    }
 }
 
 h1, h2 {
@@ -99,10 +67,6 @@ header h2 {
     color: grey;
 }
 
-figure {
-    width: 95%;
-    margin: auto;
-}
 
 figcaption {
     font-size: 0.8em;
@@ -112,12 +76,44 @@ figcaption {
     color: grey;
 }
 
-@media all and (min-width: 801px) {
+@media all and (max-width: 1250px) {
+    body {
+        grid-template-columns: 0 auto 0;
+    }
+
+    figure {
+        width: 60%;
+    }
+}
+
+@media all and (min-width: 2100px) {
+    main {
+        columns: 3;
+    }
+}
+
+@media all and (max-width: 1700px) {
+    main {
+        columns: 1;
+        text-align: left;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    main {
+        margin: 0;
+    }
+
+    figure {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 1251px) {
     main p:first-of-type::first-letter {
         font-size: 7em;
         float: left;
-        padding-right: 0.05em;
-        padding: 0.05em 0.1em;
-        line-height: 1;
+        padding: 0 0.1em;
+        line-height: 0.9;
     }
 }
