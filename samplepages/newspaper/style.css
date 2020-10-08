@@ -97,6 +97,10 @@ figcaption {
         columns: 1;
         text-align: left;
     }
+
+    figure {
+        width: 80%
+    }
 }
 
 @media all and (max-width: 1000px) {
