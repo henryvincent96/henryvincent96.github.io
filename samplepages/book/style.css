@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Lusitana&family=Raleway:wght@700&display=swap');
+
+html {
+    font-size: min(max(1em, 4vw), 25.5px);
+    font-family: 'Lusitana', serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 15vw auto 15vw;
+    background-color: whitesmoke;
+}
+
+article {
+    grid-column-start: 2;
+    justify-self: center;
+    display: inline-grid;
+    max-width: 1200px;
+}
+
+img {
+    width: 100%;
+}
+
+figure {
+    width: 95%;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2.5em;
+}
+
+main {
+    line-height: 1.75;
+    margin: 0 2.5vw;
+    text-align: justify;
+}
+
+h1, h2 {
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+p {
+    margin-bottom: 1.25em;
+}
+
+header {
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
+}
+
+.featured-image-container {
+    overflow: hidden;
+    max-height: 15em
+}
+
+header h1 {
+    margin: 0;
+}
+
+header h2 {
+    margin: 0;
+    margin-top: .5em
+}
+
+.post-info {
+    text-align: end;
+    margin: 0;
+    font-size: 0.85em;
+    color: grey;
+}
+
+
+figcaption {
+    font-size: 0.8em;
+    padding: 2px 5px;
+    margin-top: -10px;
+    text-align: right;
+    color: grey;
+}
+
+@media all and (max-width: 1700px) {
+
+    figure {
+        width: 80%
+    }
+}
+
+@media all and (max-width: 1050px) {
+    body {
+        grid-template-columns: 0 auto 0;
+    }
+
+    figure {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 1051px) {
+    main p:first-of-type::first-letter {
+        font-size: 7em;
+        float: left;
+        padding: 0 0.1em;
+        line-height: 0.9;
+    }
+}
