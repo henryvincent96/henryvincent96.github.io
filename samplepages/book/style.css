@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lusitana&family=Raleway:wght@700&display=swap');
 
 html {
-    font-size: min(max(1em, 4vw), 25.5px);
+    font-size: min(max(1em, 4vw), 22px);
     font-family: 'Lusitana', serif;
 }
 
@@ -20,6 +20,8 @@ article {
 
 img {
     width: 100%;
+    max-height: 25em;
+    object-fit: cover;
 }
 
 figure {
@@ -31,8 +33,10 @@ figure {
 
 main {
     line-height: 1.75;
-    margin: 0 2.5vw;
+    margin: 0 4vw;
     text-align: justify;
+    word-spacing: 0.1em;
+    text-indent: 1em;
 }
 
 h1, h2 {
@@ -54,7 +58,7 @@ header {
 
 .featured-image-container {
     overflow: hidden;
-    max-height: 15em
+    max-height: 15em;
 }
 
 header h1 {
@@ -101,7 +105,7 @@ figcaption {
 
 @media all and (min-width: 1051px) {
     main p:first-of-type::first-letter {
-        font-size: 7em;
+        font-size: 5em;
         float: left;
         padding: 0 0.1em;
         line-height: 0.9;
