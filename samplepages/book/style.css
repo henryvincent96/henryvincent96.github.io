@@ -51,6 +51,10 @@ p {
     margin-bottom: 1.25em;
 }
 
+main p:first-of-type {
+    text-indent: 0;
+}
+
 header {
     margin-top: 0.5em;
     margin-bottom: 1.5em;
