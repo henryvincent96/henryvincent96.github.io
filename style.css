@@ -31,19 +31,22 @@ body {
     width: 100vw;
 }
 
-@media all and (min-width: 1000px) {
-    .contents {
-        width: 35vw;
-        padding-top: 2.5vh;
-    }
-}
-
 .logo {
     width: 100%;
-    max-width: 550px;
     height: auto;
     margin: auto;
     padding: 0 5px;
+}
+
+@media (min-width: 992px) {
+    .contents {
+        width: 40vw;
+        padding-top: 2.5vh;
+    }
+
+    .logo {
+        max-width: 600px;
+    }
 }
 
 .message {
