@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+body {
+    background-color: #2F2F2F;
+    color: white;
+    font-family: Century, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.center-box {
+    display: grid;
+    place-content: center;
+}
+
+.contents {
+    width: 100vw;
+}
+
+@media all and (min-width: 1000px) {
+    .contents {
+        width: 35vw;
+        padding-top: 2.5vh;
+    }
+}
+
+.logo {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: auto;
+    padding: 0 5px;
+}
+
+.message {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 5em;
+    margin-bottom: .25em;
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
+}
