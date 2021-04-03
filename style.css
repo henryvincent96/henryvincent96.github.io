@@ -14,12 +14,27 @@ p {
 }
 
 body {
-    background-color: #2F2F2F;
-    color: white;
-    font-family: Century, 'Times New Roman', Times, serif;
-    font-size: 18px;
-    padding: 2rem;
     min-height: 100vh;
+    padding: 2rem;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.title {
+    margin-bottom: 5vh;
+}
+
+.title > h1 {
+    font-size: 15vw;
+    letter-spacing: .03em;
+}
+
+.author-tag {
+    max-width: 20vmax;
+    margin-left: 2vw;
 }
 
 .center-box {
@@ -27,38 +42,11 @@ body {
     place-content: center;
 }
 
-.contents {
-    width: 100vw;
-}
-
-.logo {
-    width: 100%;
-    height: auto;
-    margin: auto;
-    padding: 0 5px;
-}
-
-@media (min-width: 992px) {
-    .contents {
-        width: 40vw;
-        padding-top: 2.5vh;
-    }
-
-    .logo {
-        max-width: 600px;
-    }
-}
-
 .message {
-    padding: 2rem 0;
-    text-align: center;
+    width: 80vw;
 }
 
-h1 {
-    font-size: 5em;
-    margin-bottom: .25em;
-}
-
-p {
-    font-family: 'Courier New', Courier, monospace;
+.message > h1 {
+    font-size: 5vmax;
+    margin-bottom: 1rem;
 }
