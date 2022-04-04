@@ -42,11 +42,25 @@ html {
     place-content: center;
 }
 
-.message {
-    width: 80vw;
+.item {
+    width: 25vw;
+    border-style: solid;
+    border-radius: 0.3rem;
+    padding: 1.5rem;
+    border-width: .1rem;
+    border-color: #000;
 }
 
-.message > h1 {
-    font-size: 5vmax;
+.item:hover {
+    box-shadow: 12px 12px black;
+}
+
+.item > h1 {
+    font-size: 3vmax;
     margin-bottom: 1rem;
+}
+
+.item-link {
+    color: inherit;
+    text-decoration: inherit;
 }
