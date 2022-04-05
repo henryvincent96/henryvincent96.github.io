@@ -65,9 +65,9 @@ const getHourAsWord = (currentHour) => {
 const getPhoneticTime = (currentTime) => {
   const currentMinute = currentTime.getMinutes()
 
-  const isAfterHalfPast = (currentMinute <= 30)
+  const isAfterHalfPast = (currentMinute > 30)
 
-  const currentHour = isAfterHalfPast ? currentTime.getHours() : currentTime.getHours() + 1
+  const currentHour = isAfterHalfPast ? currentTime.getHours() + 1 : currentTime.getHours()
 
   const hour = getHourAsWord(currentHour)
   const minute = getMinuteAsWord(currentMinute)
@@ -76,7 +76,7 @@ const getPhoneticTime = (currentTime) => {
     return hour + " o'clock"
   }
 
-  const pastOrTo = isAfterHalfPast ? "past" : "to"
+  const pastOrTo = isAfterHalfPast ? "to" : "past"
 
   return minute + " " + pastOrTo + " " + hour
 }
