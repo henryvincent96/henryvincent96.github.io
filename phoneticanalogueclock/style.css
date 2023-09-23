@@ -1,3 +1,13 @@
+:root {
+  --dark-colour: #232422;
+  --light-colour: #e3dad4;
+}
+
+@font-face {
+  font-family: librebaskerville;
+  src: url(LibreBaskerville-Regular.ttf);
+}
+
 *::before,
 *::after {
     box-sizing: border-box;
@@ -10,10 +20,19 @@ h1 {
 
 body {
   padding: 2rem;
+  background-color: var(--light-colour);
+  color: var(--dark-colour);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-colour);
+    color: var(--light-colour);
+  }
 }
 
 html {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: librebaskerville, serif;
   font-size: 18px;
 }
 
