@@ -17,7 +17,7 @@ const getMinuteAsWord = (currentMinute) => {
     "twelve",
     "thirteen",
     "fourteen",
-    "quarter",
+    "a quarter",
     "sixteen",
     "seventeen",
     "eighteen",
@@ -64,21 +64,29 @@ const getHourAsWord = (currentHour) => {
 
 const getPhoneticTime = (currentTime) => {
   const currentMinute = currentTime.getMinutes()
+  const roundedMinute = Math.round(currentMinute/5)*5
 
-  const isAfterHalfPast = (currentMinute > 30)
+  const isAfterHalfPast = (roundedMinute > 30)
 
   const currentHour = isAfterHalfPast ? currentTime.getHours() + 1 : currentTime.getHours()
 
   const hour = getHourAsWord(currentHour)
-  const minute = getMinuteAsWord(currentMinute)
+  const minute = getMinuteAsWord(roundedMinute)
 
-  if (currentMinute === 0) {
+  if (roundedMinute === 0) {
     return hour + " o'clock"
   }
 
   const pastOrTo = isAfterHalfPast ? "to" : "past"
 
-  return minute + " " + pastOrTo + " " + hour
+  let roundingWord = ""
+  if (currentMinute > roundedMinute) {
+    roundingWord = "just gone "
+  } else if (roundedMinute > currentMinute) {
+    roundingWord = "nearly "
+  }
+
+  return roundingWord + minute + " " + pastOrTo + " " + hour
 }
 
 const updateTime = () => {
@@ -99,4 +107,5 @@ setInterval(() => {
     updateTime()
     prevMinutes = currentMinutes
   }
-}, 500)
+})
+
