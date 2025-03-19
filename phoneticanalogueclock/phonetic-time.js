@@ -73,8 +73,12 @@ const getPhoneticTime = (currentTime) => {
   const hour = getHourAsWord(currentHour)
   const minute = getMinuteAsWord(roundedMinute)
 
-  if (roundedMinute === 0) {
+  if (currentMinute === 0) {
     return hour + " o'clock"
+  } else if (roundedMinute === 60) {
+    return "nearly " + hour + " o'clock"
+  } else if (roundedMinute === 0) {
+    return "just gone " + hour + " o'clock"
   }
 
   const pastOrTo = isAfterHalfPast ? "to" : "past"
@@ -89,10 +93,8 @@ const getPhoneticTime = (currentTime) => {
   return roundingWord + minute + " " + pastOrTo + " " + hour
 }
 
-const updateTime = () => {
-  const currentTime = new Date()
+const updateTime = (currentTime) => {
   let phoneticTime = "It's " + getPhoneticTime(currentTime)
-
   timeTitle.innerText = phoneticTime
 }
 
@@ -104,15 +106,16 @@ const playChime = () => {
   }
 }
 
-updateTime()
+updateTime(new Date())
 
 let prevMinutes = 60
 
 setInterval(() => {
-  let currentMinutes = new Date().getMinutes()
+  let currentDate = new Date()
+  let currentMinutes = currentDate.getMinutes()
 
   if (currentMinutes !== prevMinutes) {
-    updateTime()
+    updateTime(currentDate)
 
     if (currentMinutes === 0) {
       playChime()
