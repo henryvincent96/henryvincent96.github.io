@@ -1,5 +1,7 @@
 const timeTitle = document.getElementById("time-title")
 
+new Audio("./silence.mp3").play()
+
 const getMinuteAsWord = (currentMinute) => {
   const minuteWords = [
     "zero",
