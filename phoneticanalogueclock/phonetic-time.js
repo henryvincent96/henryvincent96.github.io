@@ -96,6 +96,14 @@ const updateTime = () => {
   timeTitle.innerText = phoneticTime
 }
 
+const playChime = () => {
+  try {
+    document.getElementById("chime-sound").play()
+  } catch (exception) {
+    console.error("I tried to chime but your browser wouldn't let me 😢", exception);
+  }
+}
+
 updateTime()
 
 let prevMinutes = 60
@@ -105,6 +113,11 @@ setInterval(() => {
 
   if (currentMinutes !== prevMinutes) {
     updateTime()
+
+    if (currentMinutes === 0) {
+      playChime()
+    }
+
     prevMinutes = currentMinutes
   }
 })

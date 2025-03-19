@@ -1,5 +1,5 @@
 :root {
-  --dark-colour: #232422;
+  --dark-colour: #0d0c0c;
   --light-colour: #e3dad4;
 }
 
@@ -13,13 +13,17 @@
     box-sizing: border-box;
 }
 
-body,
+body, html {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
 h1 {
   margin: 0;
 }
 
 body {
-  padding: 2rem;
   background-color: var(--light-colour);
   color: var(--dark-colour);
 }
@@ -37,11 +41,13 @@ html {
 }
 
 .center-box {
-  display: grid;
-  place-content: center;
+  position: fixed;
+  top: 50%;
+  transform: translate(0%, -50%);
+  width: 100vw;
+  text-align: center;
 }
 
 h1 {
-  font-size: 10vmax;
-  max-width: 85vw;
+  font-size: 5vmax;
 }
