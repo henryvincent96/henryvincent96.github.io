@@ -19,7 +19,7 @@ const getMinuteAsWord = (currentMinute) => {
     "twelve",
     "thirteen",
     "fourteen",
-    "a quarter",
+    "quarter",
     "sixteen",
     "seventeen",
     "eighteen",

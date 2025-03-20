@@ -1,6 +1,6 @@
 :root {
-  --dark-colour: #0d0c0c;
-  --light-colour: #e3dad4;
+  --dark-colour: #0D0C0C;
+  --light-colour: #FDFBFA;
 }
 
 @font-face {
@@ -21,6 +21,9 @@ body, html {
 
 h1 {
   margin: 0;
+  font-size: 5vmax;
+  font-weight: 400;
+  letter-spacing: 0.05em;
 }
 
 body {
@@ -48,6 +51,3 @@ html {
   text-align: center;
 }
 
-h1 {
-  font-size: 5vmax;
-}
