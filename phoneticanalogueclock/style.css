@@ -59,20 +59,23 @@ html {
   border-color: var(--dark-colour);
   border-style: solid;
   border-radius: 100em;
+  border-width: 1px;
 }
 
 .clock-hand {
   width: 4px;
   background-color: var(--dark-colour);
   position: absolute;
-  top: 175px;
+  top: 160px;
   left: 50%;
-  transform-origin: top;
+  transform-origin: 1px 20px;
+  border-radius: 0.1em;
 }
 
 .clock-hand-second {
   width: 1px;
-  height: 160px;
+  height: 180px;
+  background-color: red !important;
 }
 
 .clock-hand-minute {
