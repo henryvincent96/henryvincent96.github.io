@@ -1,4 +1,5 @@
 const timeTitle = document.getElementById("time-title")
+const clockSecondHand = document.querySelector(".clock-hand-second")
 const clockMinuteHand = document.querySelector(".clock-hand-minute")
 const clockHourHand = document.querySelector(".clock-hand-hour")
 
@@ -103,9 +104,14 @@ const updateTime = (currentTime) => {
 }
 
 const updateClock = (currentTime) => {
+  const currentSecond = currentTime.getSeconds()
+  const secondPercentage = currentSecond/60
+  const secondDegrees = (secondPercentage * 360) - 180
+  clockSecondHand.style.setProperty("transform", "rotate(" + secondDegrees + "deg)")
+
   const currentMinute = currentTime.getMinutes()
   const minutePercentage = currentMinute/60
-  const minuteDegrees = (minutePercentage * 360) - 180
+  const minuteDegrees = (minutePercentage * 360) - 180 + (6 * secondPercentage)
   clockMinuteHand.style.setProperty("transform", "rotate(" + minuteDegrees + "deg)")
 
   const currentHour = currentTime.getHours()
@@ -130,9 +136,10 @@ setInterval(() => {
   let currentDate = new Date()
   let currentMinutes = currentDate.getMinutes()
 
+  updateClock(currentDate)
+
   if (currentMinutes !== prevMinutes) {
     updateTime(currentDate)
-    updateClock(currentDate)
 
     if (currentMinutes === 0) {
       playChime()

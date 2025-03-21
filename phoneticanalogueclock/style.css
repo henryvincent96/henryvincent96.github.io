@@ -70,6 +70,11 @@ html {
   transform-origin: top;
 }
 
+.clock-hand-second {
+  width: 1px;
+  height: 160px;
+}
+
 .clock-hand-minute {
   height: 150px;
 }
