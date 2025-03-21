@@ -21,7 +21,6 @@ body, html {
 
 h1 {
   margin: 0;
-  font-size: 3.5vmax;
   font-weight: 400;
   letter-spacing: 0.05em;
 }
@@ -49,5 +48,42 @@ html {
   transform: translate(0%, -50%);
   width: 100vw;
   text-align: center;
+  padding-bottom: 50px;
 }
 
+.clock-outline {
+  width: 350px;
+  height: 350px;
+  margin: auto;
+  margin-bottom: 50px;
+  border-color: var(--dark-colour);
+  border-style: solid;
+  border-radius: 100em;
+}
+
+.clock-hand {
+  width: 4px;
+  background-color: var(--dark-colour);
+  position: absolute;
+  top: 175px;
+  left: 50%;
+  transform-origin: top;
+}
+
+.clock-hand-minute {
+  height: 150px;
+}
+
+.clock-hand-hour {
+  height: 100px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .clock-outline {
+    border-color: var(--light-colour);
+  }
+
+  .clock-hand {
+    background-color: var(--light-colour);
+  }
+}

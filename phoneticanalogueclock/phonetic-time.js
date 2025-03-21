@@ -1,4 +1,6 @@
 const timeTitle = document.getElementById("time-title")
+const clockMinuteHand = document.querySelector(".clock-hand-minute")
+const clockHourHand = document.querySelector(".clock-hand-hour")
 
 new Audio("./silence.mp3").play()
 
@@ -100,6 +102,17 @@ const updateTime = (currentTime) => {
   timeTitle.innerText = phoneticTime
 }
 
+const updateClock = (currentTime) => {
+  const currentMinute = currentTime.getMinutes()
+  const minutePercentage = currentMinute/60
+  const minuteDegrees = (minutePercentage * 360) - 180
+  clockMinuteHand.style.setProperty("transform", "rotate(" + minuteDegrees + "deg)")
+
+  const currentHour = currentTime.getHours()
+  const hourDegrees = ((currentHour/12) * 360) - 180 + (30 * minutePercentage)
+  clockHourHand.style.setProperty("transform", "rotate(" + hourDegrees + "deg)")
+}
+
 const playChime = () => {
   try {
     document.getElementById("chime-sound").play()
@@ -109,6 +122,7 @@ const playChime = () => {
 }
 
 updateTime(new Date())
+updateClock(new Date())
 
 let prevMinutes = 60
 
@@ -118,6 +132,7 @@ setInterval(() => {
 
   if (currentMinutes !== prevMinutes) {
     updateTime(currentDate)
+    updateClock(currentDate)
 
     if (currentMinutes === 0) {
       playChime()
