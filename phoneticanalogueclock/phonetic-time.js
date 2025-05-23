@@ -41,7 +41,7 @@ const getMinuteAsWord = (currentMinute) => {
   ]
 
   const minuteNumber = (currentMinute <= 30) ? currentMinute : 60 - currentMinute
-  
+
   return minuteWords[minuteNumber]
 }
 
@@ -63,13 +63,13 @@ const getHourAsWord = (currentHour) => {
   ]
 
   const hourNumber = (currentHour <= 12) ? currentHour : currentHour - 12
-  
+
   return hourWords[hourNumber]
 }
 
 const getPhoneticTime = (currentTime) => {
   const currentMinute = currentTime.getMinutes()
-  const roundedMinute = Math.round(currentMinute/5)*5
+  const roundedMinute = Math.round(currentMinute / 5) * 5
 
   const isAfterHalfPast = (roundedMinute > 30)
 
@@ -105,17 +105,17 @@ const updateTime = (currentTime) => {
 
 const updateClock = (currentTime) => {
   const currentSecond = currentTime.getSeconds()
-  const secondPercentage = currentSecond/60
+  const secondPercentage = currentSecond / 60
   const secondDegrees = (secondPercentage * 360) - 180
   clockSecondHand.style.setProperty("transform", "rotate(" + secondDegrees + "deg)")
 
   const currentMinute = currentTime.getMinutes()
-  const minutePercentage = currentMinute/60
+  const minutePercentage = currentMinute / 60
   const minuteDegrees = (minutePercentage * 360) - 180 + (6 * secondPercentage)
   clockMinuteHand.style.setProperty("transform", "rotate(" + minuteDegrees + "deg)")
 
   const currentHour = currentTime.getHours()
-  const hourDegrees = ((currentHour/12) * 360) - 180 + (30 * minutePercentage)
+  const hourDegrees = ((currentHour / 12) * 360) - 180 + (30 * minutePercentage) + (0.1 * secondPercentage)
   clockHourHand.style.setProperty("transform", "rotate(" + hourDegrees + "deg)")
 }
 

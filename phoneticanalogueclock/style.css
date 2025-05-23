@@ -4,16 +4,17 @@
 }
 
 @font-face {
-  font-family: librebaskerville;
-  src: url(LibreBaskerville-Regular.ttf);
+  font-family: OpenSans-Italic;
+  src: url(OpenSans-Italic-VariableFont_wdth,wght.ttf);
 }
 
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   height: 100%;
   overflow: hidden;
@@ -22,7 +23,6 @@ body, html {
 h1 {
   margin: 0;
   font-weight: 400;
-  letter-spacing: 0.05em;
   font-size: 22px;
   padding: 0px 8px;
 }
@@ -40,7 +40,7 @@ body {
 }
 
 html {
-  font-family: librebaskerville, serif;
+  font-family: OpenSans-Italic, sans-serif;
   font-size: 18px;
 }
 
@@ -57,7 +57,7 @@ html {
   width: 350px;
   height: 350px;
   margin: auto;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
   border-color: var(--dark-colour);
   border-style: solid;
   border-radius: 100em;
@@ -70,7 +70,7 @@ html {
   position: absolute;
   top: 160px;
   left: 50%;
-  transform-origin: 1px 20px;
+  transform-origin: 2px 20px;
   border-radius: 0.1em;
 }
 
@@ -78,6 +78,7 @@ html {
   width: 1px;
   height: 180px;
   background-color: red !important;
+  transform-origin: 1px 20px;
 }
 
 .clock-hand-minute {
