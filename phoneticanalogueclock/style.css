@@ -109,6 +109,11 @@ html {
 
 input[type="range"] {
   accent-color: var(--dark-colour);
+  cursor: grab;
+}
+
+input[type="range"]:active {
+  cursor: grabbing;
 }
 
 @media (prefers-color-scheme: dark) {
