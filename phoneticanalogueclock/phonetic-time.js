@@ -7,6 +7,33 @@ const volumeIcon = document.getElementById("volume-icon")
 const unmutedIconName = "fa-volume-high"
 const mutedIconName = "fa-volume-xmark"
 
+const isMutedStorageKey = "isMuted"
+
+const getIsMuted = () => {
+  return Boolean(JSON.parse(localStorage.getItem(isMutedStorageKey)))
+}
+
+const setIsMuted = (isMuted) => {
+  localStorage.setItem(isMutedStorageKey, isMuted)
+}
+
+const updateMuteState = (newState) => {
+  const volumeIconClasses = volumeIcon.classList
+
+  if (newState === true) {
+    volumeIconClasses.replace(unmutedIconName, mutedIconName)
+  } else {
+    volumeIconClasses.replace(mutedIconName, unmutedIconName)
+  }
+
+  volumeControl.disabled = newState
+  setIsMuted(newState)
+}
+
+volumeIcon.addEventListener("click", (event) => {
+  updateMuteState(!getIsMuted())
+})
+
 new Audio("./silence.mp3").play()
 
 const getMinuteAsWord = (currentMinute) => {
@@ -124,7 +151,7 @@ const updateClock = (currentTime) => {
 }
 
 const playChime = () => {
-  if (volumeIcon.classList.contains(mutedIconName)) {
+  if (getIsMuted()) {
     return
   }
 
@@ -137,20 +164,14 @@ const playChime = () => {
   }
 }
 
-volumeIcon.addEventListener("click", (event) => {
-  const volumeIconClasses = volumeIcon.classList
+const initialDate = new Date
+updateTime(initialDate)
+updateClock(initialDate)
+updateMuteState(getIsMuted())
 
-  if (volumeIconClasses.contains(unmutedIconName)) {
-    volumeIconClasses.replace(unmutedIconName, mutedIconName)
-    volumeControl.disabled = true
-  } else {
-    volumeIconClasses.replace(mutedIconName, unmutedIconName)
-    volumeControl.disabled = false
-  }
-})
-
-updateTime(new Date())
-updateClock(new Date())
+setTimeout(() => {
+  document.getElementById("volume-settings").classList.remove("volume-settings-initial")
+}, 5000)
 
 let prevMinutes = 60
 

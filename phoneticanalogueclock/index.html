@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
   <title>Phonetic Analogue Clock — By Henry Vincent</title>
@@ -16,14 +17,17 @@
       <div class="clock-hand clock-hand-second"></div>
     </div>
     <h1 id="time-title"></h1>
-    <div class="settings-row">
-      <div class="volume-settings">
-        <i id="volume-icon" class="volume-icon fa-solid fa-volume-high"></i>
-        <input id="volume-control" type="range" min="0" max="100" />
-      </div>
+  </div>
+
+  <div class="settings-row">
+    <div id="volume-settings" class="volume-settings volume-settings-initial">
+      <i id="volume-icon" class="volume-icon fa-solid fa-volume-high"></i>
+      <input id="volume-control" type="range" min="0" max="100" />
     </div>
   </div>
 
   <script src="./phonetic-time.js"></script>
-  <audio id="chime-sound" src="./chime.mp3" preload="auto" />
+  <audio id="chime-sound" src="./chime.mp3" preload="auto"></audio>
 </body>
+
+</html>

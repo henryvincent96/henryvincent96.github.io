@@ -83,10 +83,13 @@ html {
 }
 
 .settings-row {
-  margin-top: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+  margin: 10px;
 }
 
 .volume-settings {
@@ -96,6 +99,10 @@ html {
   width: fit-content;
   opacity: 15%;
   transition: 0.3s;
+}
+
+.volume-settings-initial {
+  opacity: 100%;
 }
 
 .volume-settings:hover {
