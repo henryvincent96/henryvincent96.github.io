@@ -2,6 +2,10 @@ const timeTitle = document.getElementById("time-title")
 const clockSecondHand = document.querySelector(".clock-hand-second")
 const clockMinuteHand = document.querySelector(".clock-hand-minute")
 const clockHourHand = document.querySelector(".clock-hand-hour")
+const volumeControl = document.getElementById("volume-control")
+const volumeIcon = document.getElementById("volume-icon")
+const unmutedIconName = "fa-volume-high"
+const mutedIconName = "fa-volume-xmark"
 
 new Audio("./silence.mp3").play()
 
@@ -120,12 +124,30 @@ const updateClock = (currentTime) => {
 }
 
 const playChime = () => {
+  if (volumeIcon.classList.contains(mutedIconName)) {
+    return
+  }
+
   try {
-    document.getElementById("chime-sound").play()
+    const chimeSound = document.getElementById("chime-sound")
+    chimeSound.volume = (volumeControl.value * 0.01)
+    chimeSound.play()
   } catch (exception) {
     console.error("I tried to chime but your browser wouldn't let me 😢", exception);
   }
 }
+
+volumeIcon.addEventListener("click", (event) => {
+  const volumeIconClasses = volumeIcon.classList
+
+  if (volumeIconClasses.contains(unmutedIconName)) {
+    volumeIconClasses.replace(unmutedIconName, mutedIconName)
+    volumeControl.disabled = true
+  } else {
+    volumeIconClasses.replace(mutedIconName, unmutedIconName)
+    volumeControl.disabled = false
+  }
+})
 
 updateTime(new Date())
 updateClock(new Date())

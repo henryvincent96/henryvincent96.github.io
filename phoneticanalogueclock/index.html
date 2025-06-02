@@ -1,10 +1,13 @@
 <!DOCTYPE html>
+
 <head>
   <title>Phonetic Analogue Clock — By Henry Vincent</title>
   <link rel="stylesheet" href="./style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/191b424401.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <div class="center-box">
     <div class="clock-outline">
@@ -13,8 +16,14 @@
       <div class="clock-hand clock-hand-second"></div>
     </div>
     <h1 id="time-title"></h1>
+    <div class="settings-row">
+      <div class="volume-settings">
+        <i id="volume-icon" class="volume-icon fa-solid fa-volume-high"></i>
+        <input id="volume-control" type="range" min="0" max="100" />
+      </div>
+    </div>
   </div>
 
-  <script src="./phonetic-time.js" ></script>
+  <script src="./phonetic-time.js"></script>
   <audio id="chime-sound" src="./chime.mp3" preload="auto" />
 </body>

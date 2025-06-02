@@ -1,6 +1,6 @@
 :root {
   --dark-colour: #0D0C0C;
-  --light-colour: #FDFBFA;
+  --light-colour: #FEFAF9;
 }
 
 @font-face {
@@ -32,13 +32,6 @@ body {
   color: var(--dark-colour);
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--dark-colour);
-    color: var(--light-colour);
-  }
-}
-
 html {
   font-family: OpenSans-Italic, sans-serif;
   font-size: 18px;
@@ -50,7 +43,7 @@ html {
   transform: translate(0%, -50%);
   width: 100vw;
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 25px;
 }
 
 .clock-outline {
@@ -89,12 +82,50 @@ html {
   height: 100px;
 }
 
+.settings-row {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.volume-settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  opacity: 15%;
+  transition: 0.3s;
+}
+
+.volume-settings:hover {
+  opacity: 100%;
+}
+
+.volume-icon {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  accent-color: var(--dark-colour);
+}
+
 @media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-colour);
+    color: var(--light-colour);
+  }
+
   .clock-outline {
     border-color: var(--light-colour);
   }
 
   .clock-hand {
     background-color: var(--light-colour);
+  }
+
+  input[type="range"] {
+    accent-color: var(--light-colour);
   }
 }
